@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <ignite.version>2.6.0</ignite.version>
+        <h2.version>1.4.197</h2.version>
     </properties>
 
     <dependencies>
@@ -65,6 +66,14 @@
             <version>${ignite.version}</version>
         </dependency>
         <!-- ignite -->
+
+        <!-- h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+        </dependency>
+        <!-- h2 -->
 
         <!-- test -->
         <dependency>

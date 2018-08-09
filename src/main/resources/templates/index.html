@@ -2,14 +2,13 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="yboklee"/>
-    <meta http-equiv="Cache-Control" content="No-Cache"/>
-    <meta http-equiv="pragma" content="No-Cache"/>
-    <title th:text="#{'html.title'}"></title>
+    <title th:text="#{html.title}"></title>
 </head>
 <body>
-    Boot Session Ignite
+    <div>
+        <h1>Secured Page</h1>
+        <p>This page is secured using Spring Boot, Spring Session, and Spring Security.</p>
+    </div>
 </body>
 </html>
