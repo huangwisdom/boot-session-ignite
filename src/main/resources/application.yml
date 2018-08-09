@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: boot-session-ignite
+  thymeleaf:
+    cache: false
+server:
+  port: 8080
