@@ -1,6 +1,6 @@
 package com.github.iyboklee.config;
 
-import java.util.Arrays;
+import java.util.List;
 
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteException;
@@ -14,12 +14,15 @@ import org.apache.ignite.logger.slf4j.Slf4jLogger;
 import org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi;
 import org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi;
 import org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.session.ExpiringSession;
 
 @Configuration
 public class IgniteConfig {
+
+    @Value("#{'${ignite.cluster.nodes}'.split(',')}") private List<String> nodes;
 
     @Bean
     IgniteConfiguration igniteConfiguration() {
@@ -33,9 +36,9 @@ public class IgniteConfig {
         // Cluster Discovery
         TcpDiscoverySpi spi  = new TcpDiscoverySpi();
         TcpDiscoveryVmIpFinder ipFinder  = new TcpDiscoveryVmIpFinder();
-        ipFinder.setAddresses(Arrays.asList("127.0.0.1:47500..47509"));
+        ipFinder.setAddresses(nodes);
         spi.setIpFinder(ipFinder);
-        //spi.setSocketTimeout(100);
+        spi.setSocketTimeout(100);
         igniteCfg.setDiscoverySpi(spi);
 
         // Cluster Communication

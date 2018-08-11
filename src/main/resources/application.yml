@@ -10,3 +10,6 @@ spring:
     cache-duration: PT1H
 server:
   port: 8080
+ignite:
+  cluster:
+    nodes: 127.0.0.1:47500..47509
