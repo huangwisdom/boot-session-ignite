@@ -4,10 +4,6 @@ spring:
   security:
     user:
       password: 1234
-  h2:
-    console:
-      enabled: false
-      path: /h2-console
   messages:
     basename: i18n/messages
     encoding: UTF-8
