@@ -1,14 +1,12 @@
 spring:
   application:
     name: boot-session-ignite
-  thymeleaf:
-    cache: false
   security:
     user:
       password: 1234
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
   messages:
     basename: i18n/messages
