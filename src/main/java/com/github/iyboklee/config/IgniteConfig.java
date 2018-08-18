@@ -69,7 +69,7 @@ public class IgniteConfig {
     }
 
     @Bean(destroyMethod = "close")
-    public Ignite ignite(IgniteConfiguration configuration) throws IgniteException {
+    public Ignite igniteInstance(IgniteConfiguration configuration) throws IgniteException {
         Ignite ignite = Ignition.start(configuration);
         ignite.cluster().active(true);
         return ignite;
